@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="androidView">
         <xs:complexType>
             <xs:group ref="groupAndroidView"/>
@@ -1331,7 +1331,7 @@
     <xs:attribute name="layout_gravity">
         <xs:simpleType><xs:union memberTypes="xs:string">
             <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
+                <xs:restriction base="xs:string">
                     <xs:enumeration value="bottom" />
                     <xs:enumeration value="center" />
                     <xs:enumeration value="center_horizontal" />
@@ -1505,7 +1505,7 @@
     <xs:attribute name="gravity">
         <xs:simpleType><xs:union memberTypes="xs:string">
             <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
+                <xs:restriction base="xs:string">
                     <xs:enumeration value="bottom" />
                     <xs:enumeration value="center" />
                     <xs:enumeration value="center_horizontal" />
@@ -1613,14 +1613,12 @@
     <xs:attribute name="gestureStrokeType" type="xs:string" />
     <xs:attribute name="gestureStrokeWidth" type="xs:string" />
     <xs:attribute name="orientation">
-
         <xs:simpleType>
-            <xs:restriction base="xs:NMTOKEN">
+            <xs:restriction base="xs:string">
                 <xs:enumeration value="horizontal" />
                 <xs:enumeration value="vertical" />
             </xs:restriction>
         </xs:simpleType>
-
     </xs:attribute>
     <xs:attribute name="uncertainGestureColor" type="xs:string" />
     <xs:attribute name="innerRadius" type="xs:string" />
@@ -1727,16 +1725,7 @@
     <xs:attribute name="delay" type="xs:string" />
     <xs:attribute name="maxLevel" type="xs:string" />
     <xs:attribute name="minLevel" type="xs:string" />
-    <xs:attribute name="baselineAligned">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="baselineAligned" type="xs:boolean"/>
     <xs:attribute name="baselineAlignedChildIndex" type="xs:string" />
     <xs:attribute name="dividerPadding" type="xs:string" />
     <xs:attribute name="measureWithLargestChild" type="xs:string" />
@@ -2164,132 +2153,38 @@
     <xs:attribute name="mode" type="xs:string" />
     <xs:attribute name="layout_scale" type="xs:string" />
     <xs:attribute name="alpha" type="xs:string" />
-    <xs:attribute name="clickable">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="clickable" type="xs:boolean"/>
     <xs:attribute name="contentDescription" type="xs:string" />
     <xs:attribute name="drawingCacheQuality">
-
         <xs:simpleType>
-            <xs:restriction base="xs:NMTOKEN">
+            <xs:restriction base="xs:string">
                 <xs:enumeration value="auto" />
                 <xs:enumeration value="high" />
                 <xs:enumeration value="low" />
             </xs:restriction>
         </xs:simpleType>
-
     </xs:attribute>
-    <xs:attribute name="duplicateParentState">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="fadeScrollbars">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="duplicateParentState" type="xs:boolean"/>
+    <xs:attribute name="fadeScrollbars" type="xs:boolean"/>
     <xs:attribute name="fadingEdge">
-
         <xs:simpleType>
-            <xs:restriction base="xs:NMTOKEN">
+            <xs:restriction base="xs:string">
                 <xs:enumeration value="horizontal" />
                 <xs:enumeration value="none" />
                 <xs:enumeration value="vertical" />
             </xs:restriction>
         </xs:simpleType>
-
     </xs:attribute>
     <xs:attribute name="fadingEdgeLength" type="xs:string" />
     <xs:attribute name="filterTouchesWhenObscured" type="xs:string" />
-    <xs:attribute name="fitsSystemWindows">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="focusable">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="focusableInTouchMode">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="hapticFeedbackEnabled">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="isScrollContainer">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="keepScreenOn">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="fitsSystemWindows" type="xs:boolean"/>
+    <xs:attribute name="focusable" type="xs:boolean"/>
+    <xs:attribute name="focusableInTouchMode" type="xs:boolean"/>
+    <xs:attribute name="hapticFeedbackEnabled" type="xs:boolean"/>
+    <xs:attribute name="isScrollContainer" type="xs:boolean"/>
+    <xs:attribute name="keepScreenOn" type="xs:boolean"/>
     <xs:attribute name="layerType" type="xs:string" />
-    <xs:attribute name="longClickable">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="longClickable" type="xs:boolean"/>
     <xs:attribute name="nextFocusDown" type="xs:string" />
     <xs:attribute name="nextFocusForward" type="xs:string" />
     <xs:attribute name="nextFocusLeft" type="xs:string" />
@@ -2305,54 +2200,25 @@
     <xs:attribute name="rotation" type="xs:string" />
     <xs:attribute name="rotationX" type="xs:string" />
     <xs:attribute name="rotationY" type="xs:string" />
-    <xs:attribute name="saveEnabled">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="saveEnabled" type="xs:boolean"/>
     <xs:attribute name="scaleX" type="xs:string" />
     <xs:attribute name="scaleY" type="xs:string" />
     <xs:attribute name="scrollX" type="xs:string" />
     <xs:attribute name="scrollY" type="xs:string" />
-    <xs:attribute name="scrollbarAlwaysDrawHorizontalTrack">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="scrollbarAlwaysDrawVerticalTrack">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="scrollbarAlwaysDrawHorizontalTrack" type="xs:boolean"/>
+    <xs:attribute name="scrollbarAlwaysDrawVerticalTrack" type="xs:boolean"/>
     <xs:attribute name="scrollbarDefaultDelayBeforeFade" type="xs:string" />
     <xs:attribute name="scrollbarFadeDuration" type="xs:string" />
     <xs:attribute name="scrollbarSize" type="xs:string" />
     <xs:attribute name="scrollbarStyle">
-
         <xs:simpleType>
-            <xs:restriction base="xs:NMTOKEN">
+            <xs:restriction base="xs:string">
                 <xs:enumeration value="insideInset" />
                 <xs:enumeration value="insideOverlay" />
                 <xs:enumeration value="outsideInset" />
                 <xs:enumeration value="outsideOverlay" />
             </xs:restriction>
         </xs:simpleType>
-
     </xs:attribute>
     <xs:attribute name="scrollbarThumbHorizontal" type="xs:string" />
     <xs:attribute name="scrollbarThumbVertical" type="xs:string" />
@@ -2369,106 +2235,46 @@
             </xs:simpleType>
         </xs:union></xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="soundEffectsEnabled">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="soundEffectsEnabled" type="xs:boolean"/>
     <xs:attribute name="transformPivotX" type="xs:string" />
     <xs:attribute name="transformPivotY" type="xs:string" />
     <xs:attribute name="translationX" type="xs:string" />
     <xs:attribute name="translationY" type="xs:string" />
     <xs:attribute name="verticalScrollbarPosition" type="xs:string" />
     <xs:attribute name="visibility">
-
         <xs:simpleType>
-            <xs:restriction base="xs:NMTOKEN">
+            <xs:restriction base="xs:string">
                 <xs:enumeration value="gone" />
                 <xs:enumeration value="invisible" />
                 <xs:enumeration value="visible" />
             </xs:restriction>
         </xs:simpleType>
-
     </xs:attribute>
-    <xs:attribute name="addStatesFromChildren">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="alwaysDrawnWithCache">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="addStatesFromChildren" type="xs:boolean"/>
+    <xs:attribute name="alwaysDrawnWithCache" type="xs:boolean"/>
     <xs:attribute name="animateLayoutChanges" type="xs:string" />
-    <xs:attribute name="animationCache">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="clipChildren">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="clipToPadding">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="true" />
-                    <xs:enumeration value="false" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="animationCache" type="xs:boolean"/>
+    <xs:attribute name="clipChildren" type="xs:boolean"/>
+    <xs:attribute name="clipToPadding" type="xs:boolean"/>
     <xs:attribute name="descendantFocusability">
-
         <xs:simpleType>
-            <xs:restriction base="xs:NMTOKEN">
+            <xs:restriction base="xs:string">
                 <xs:enumeration value="afterDescendants" />
                 <xs:enumeration value="beforeDescendants" />
                 <xs:enumeration value="blocksDescendants" />
             </xs:restriction>
         </xs:simpleType>
-
     </xs:attribute>
     <xs:attribute name="layoutAnimation" type="xs:string" />
     <xs:attribute name="persistentDrawingCache">
-        <xs:simpleType><xs:union memberTypes="xs:string">
-            <xs:simpleType>
-                <xs:restriction base="xs:NMTOKEN">
-                    <xs:enumeration value="all" />
-                    <xs:enumeration value="animation" />
-                    <xs:enumeration value="none" />
-                    <xs:enumeration value="scrolling" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union></xs:simpleType>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="all" />
+                <xs:enumeration value="animation" />
+                <xs:enumeration value="none" />
+                <xs:enumeration value="scrolling" />
+            </xs:restriction>
+        </xs:simpleType>
     </xs:attribute>
     <xs:attribute name="splitMotionEvents" type="xs:string" />
     <xs:attribute name="layout_margin" type="xs:string" />
